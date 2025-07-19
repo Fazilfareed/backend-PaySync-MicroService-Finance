@@ -11,6 +11,7 @@ const StaffDetails = require('./models/StaffDetails'); // make sure this line is
 
 const bcrypt = require("bcrypt");
 const clientRoutes = require('./routes/clientRoutes');
+const cors = require('cors');
 
 
 
@@ -19,6 +20,7 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
